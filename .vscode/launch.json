@@ -2,24 +2,17 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C++ Launch",
+            "name": "Debug",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/game.exe", // Path to compiled executable
-            "args": [],                             // Any command-line arguments
+            "program": "/home/ezau/Batalha_de_Laponia/build/bin/Batalha_de_Laponia",
+            "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",            // Working directory
+            "cwd": "${workspaceFolder}",
             "environment": [],
-            "externalConsole": true,                // Opens console window
-            "MIMode": "gdb",                        // Or "lldb" on Mac
-            "preLaunchTask": "Build files",
-            "setupCommands": [
-                {
-                    "description": "Enable pretty-printing for gdb",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ]
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "/usr/bin/gdb"
         }
     ]
 }

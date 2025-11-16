@@ -1,0 +1,3 @@
+/home/ezau/Batalha_de_Laponia/build/CMakeFiles/Batalha_de_Laponia.dir
+/home/ezau/Batalha_de_Laponia/build/CMakeFiles/edit_cache.dir
+/home/ezau/Batalha_de_Laponia/build/CMakeFiles/rebuild_cache.dir
