@@ -1,23 +1,6 @@
 #include "Tile.hpp"
 
-Tile::Tile(int x, int y, char state) 
-    : x(x), y(y), state(state) {}
-
-char Tile::getState() const {
-    return state;
-}
-
-void Tile::setState(char newState) {
-    state = newState;
-}
-
-int Tile::getType() const {
-    return state;
-}
-
-void Tile::setType(Type newType) {
-    type = newType;
-}
+Tile::Tile(int x, int y, Type type) : x(x), y(y), type(type), occupant(nullptr) {}
 
 int Tile::getX() const {
     return x;
@@ -25,4 +8,29 @@ int Tile::getX() const {
 
 int Tile::getY() const {
     return y;
+}
+
+Tile::Type Tile::getType() const {
+    return type;
+}
+
+Troop * Tile::getOccupant() const{
+    return occupant;
+}
+
+std::string typeToString(Tile::Type type) {
+    switch (type) {
+        case Tile::Type::Floor: return "[ ]";
+        case Tile::Type::Wall:  return "+++";
+        case Tile::Type::River: return "~~~";
+    }
+    return " ? ";
+}
+
+std::ostream& operator<<(std::ostream& os, Tile const& tile) {
+    std::string out = typeToString(tile.getType());
+    if (tile.getType() == Tile::Type::Floor) out.replace(1, 1, 1, tile.occupant->getSymbol());
+
+    os << out;
+    return os;
 }

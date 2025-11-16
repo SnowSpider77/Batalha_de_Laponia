@@ -159,4 +159,5 @@ CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o: \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
- /home/ezau/Batalha_de_Laponia/src/Tile.hpp
+ /home/ezau/Batalha_de_Laponia/src/Tile.hpp /usr/include/c++/13/sstream \
+ /usr/include/c++/13/bits/sstream.tcc

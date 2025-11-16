@@ -2,19 +2,29 @@
 #include <iostream>
 
 Board::Board() {
-    for (int i = 0; i < SIZE; i++) {
-        std::vector<Tile> row;
-        for (int j = 0; j < SIZE; j++) {
-            row.emplace_back(i, j);
+    board.resize(SIZE, std::vector<Tile>());
+    for (int y = 0; y < SIZE; y++) {
+        board[y].reserve(SIZE);
+
+        for (int x = 0; x < SIZE; x++) {
+            Tile::Type t;
+
+            if (x == 0 || x == SIZE-1 || y == 0 || y == SIZE-1)
+                t = Tile::Type::Wall;
+            else if (y == 5 || y == 6)
+                t = Tile::Type::River;
+            else
+                t = Tile::Type::Floor;
+
+            board[y].emplace_back(x, y, t);
         }
-        board.push_back(row);
     }
 }
 
 void Board::displayBoard() const {
     for (const std::vector<Tile>& row : board) {
         for (const Tile& tile : row) {
-            std::cout << tile.getState() << ' ';
+            std::cout << tile;
         }
         std::cout << '\n';
     }
