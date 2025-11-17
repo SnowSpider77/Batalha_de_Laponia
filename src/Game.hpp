@@ -1,19 +1,36 @@
+#pragma once
+
+#include <vector>
 #include "Board.hpp"
 #include "Troop.hpp"
-#include <vector>
 
 class Game {
+public:
+    Game(int width = 12, int height = 12, int troopsPerPlayer = 8);
+
+    void start();
+
 private:
     Board board;
-    std::vector<Troop*> p1Troops;
-    std::vector<Troop*> p2Troops;
+    std::vector<Troop*> northTroops;
+    std::vector<Troop*> southTroops;
 
-    int currentPlayer = 1;
-    int specialUsesP1 = 4;
-    int specialUsesP2 = 4;
+    int currentPlayer;
+    int specialUsesNorth;
+    int specialUsesSouth;
+    int troopsPerPlayer;
 
-public:
-    void start();
+    // phases
     void placementPhase();
-    void gameLoop();
+    void battleLoop();
+
+    // actions
+    void doMove(Troop * t);
+    void doAttack(Troop * t);
+
+    // helpers
+    bool inBoard(int x, int y) const;
+    void cleanup();
+    int countTroops(int player) const;
+    void askRestart();
 };

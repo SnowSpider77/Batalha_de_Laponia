@@ -1,7 +1,7 @@
-#ifndef TROOP_H
-#define TROOP_H
+#pragma once
 
 #include<vector>
+#include<stdexcept>
 
 class Board;
 
@@ -12,8 +12,8 @@ struct Position{
 
 class Troop {
 public:
-    enum class Player {P1, P2};
-    enum class TroopType { Axial, Diagonal, SpecialWall, SpecialMine};
+    enum class Player {North, South};
+    enum class TroopType { Axial, Diagonal, SpecialWall, SpecialBomb};
 
 private:
     Position pos;
@@ -22,20 +22,59 @@ private:
     char symbol;
 
 public:
-    Troop(Player owner, int x, int y, TroopType type);
+    Troop(Player owner, int x, int y);
     virtual ~Troop() = default;
 
     Position getPos() const;
     void moveTo(int x, int y);
-    void moveDelta(int dx, int dy);
 
     Player getOwner() const;
 
-    virtual void attack() = 0;
-    virtual std::vector<Position> getLegalMoves(Board const& board) const = 0;
-    virtual std::vector<Position> getLegalTargets(Board const& board) const = 0;
+    virtual void attack(Board& board, Position p) {
+        throw std::runtime_error("This troop requires more information for the attack");
+    }
+    virtual void attack(Board& board, Position p, int d) {
+        throw std::runtime_error("This troop type does not support directional attack");
+    }
+
+    TroopType getType() const;
+    void setType(TroopType t);
 
     char getSymbol() const;
+    void setSymbol(char c);
 };
 
-#endif
+
+class AxialTroop : public Troop {
+public:
+    
+    AxialTroop(Player owner, int x, int y);
+    ~AxialTroop() = default;
+
+    void attack(Board& board, Position p) override;
+};
+
+class DiagonalTroop : public Troop {
+public:
+    DiagonalTroop(Player owner, int x, int y);
+    ~DiagonalTroop() = default;
+
+    void attack(Board& board, Position p, int d) override;
+};
+
+class SpecialWallTroop : public Troop {
+public:
+    SpecialWallTroop(Player owner, int x, int y);
+    ~SpecialWallTroop() = default;
+
+    void attack(Board& board, Position p, int d) override;
+};
+
+
+class SpecialBombTroop : public Troop {
+public:
+    SpecialBombTroop(Player owner, int x, int y);
+    ~SpecialBombTroop() = default;
+
+    void attack(Board& board, Position p) override;
+};

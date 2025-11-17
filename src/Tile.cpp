@@ -14,8 +14,12 @@ Tile::Type Tile::getType() const {
     return type;
 }
 
-Troop * Tile::getOccupant() const{
+Troop * Tile::getOccupant() const {
     return occupant;
+}
+
+void Tile::setOccupant(Troop * t) {
+    occupant = t;
 }
 
 std::string typeToString(Tile::Type type) {

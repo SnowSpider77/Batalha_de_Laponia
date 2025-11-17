@@ -1,7 +1,7 @@
 #include "Board.hpp"
 #include <iostream>
 
-Board::Board() {
+Board::Board(int width, int height) : width(width), height(height) {
     board.resize(height, std::vector<Tile>());
     for (int y = 0; y < height; y++) {
         board[y].reserve(width);
@@ -30,6 +30,55 @@ void Board::displayBoard() const {
     }
 }
 
-Tile& Board::getTile(int x, int y) {
-    return board[x][y];
+Tile& Board::getTile(Position p) {
+    return board[p.x][p.y];
+}
+
+Tile const& Board::getTile(Position p) const {
+    return board[p.x][p.y];
+}
+
+bool Board::inBounds(Position p) const {
+    return (getTile(p).getType() != Tile::Type::Wall);
+}
+
+bool Board::isEmpty(Position p) const {
+    return (getTile(p).getOccupant() == nullptr);
+}
+
+bool Board::isWalkable(Position p) const {
+    return (getTile(p).getType() == Tile::Type::Floor && isEmpty(p));
+}
+
+Troop * Board::getTroop(Position p) const {
+    return getTile(p).getOccupant();
+}
+
+void Board::placeTroop(Position p, Troop * t) {
+    getTile(p).setOccupant(t);
+}
+
+void Board::removeTroop(Position p) {
+    Tile tile = getTile(p);
+    Troop * t = tile.getOccupant();
+    if (t) {
+        delete t;
+        tile.setOccupant(nullptr);
+    }
+}
+
+void Board::moveTroop(Position from, Position to) {
+    Tile tileTo = getTile(to);
+    if (tileTo.getOccupant() != nullptr) return;
+    Tile tileFrom = getTile(from);
+    Troop * t = tileFrom.getOccupant();
+    if (!t) return;
+    tileTo.setOccupant(t);
+    tileFrom.setOccupant(nullptr);
+}
+
+void Board::clear() {
+    for (int x = 1; x < width - 1; x++)
+        for (int y = 1; y < height - 1; y++)
+            removeTroop({x, y});
 }

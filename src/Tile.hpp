@@ -1,5 +1,4 @@
-#ifndef TILE_H
-#define TILE_H
+#pragma once
 
 #include "Troop.hpp"
 
@@ -21,8 +20,7 @@ public:
     int getY() const;
     Type getType() const;
     Troop * getOccupant() const;
+    void setOccupant(Troop * t);
 
     friend std::ostream& operator<<(std::ostream& os, Tile const& tile);
 };
-
-#endif

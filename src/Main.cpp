@@ -1,11 +1,11 @@
 #include <iostream>
-#include "Board.hpp"
+#include "Game.hpp"
 
 class MainClass {
 public:
     void run() {
-        Board board = Board();
-        board.displayBoard();
+        Game game = Game();
+        game.start();
     }
 };
 

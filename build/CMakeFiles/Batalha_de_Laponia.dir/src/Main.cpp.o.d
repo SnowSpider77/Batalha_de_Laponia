@@ -154,11 +154,12 @@ CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o: \
  /usr/include/c++/13/bits/basic_ios.tcc \
  /usr/include/c++/13/bits/ostream.tcc /usr/include/c++/13/istream \
  /usr/include/c++/13/bits/istream.tcc \
- /home/ezau/Batalha_de_Laponia/src/Board.hpp /usr/include/c++/13/vector \
+ /home/ezau/Batalha_de_Laponia/src/Game.hpp /usr/include/c++/13/vector \
  /usr/include/c++/13/bits/stl_uninitialized.h \
  /usr/include/c++/13/bits/stl_vector.h \
  /usr/include/c++/13/bits/stl_bvector.h \
  /usr/include/c++/13/bits/vector.tcc \
+ /home/ezau/Batalha_de_Laponia/src/Board.hpp \
  /home/ezau/Batalha_de_Laponia/src/Tile.hpp \
  /home/ezau/Batalha_de_Laponia/src/Troop.hpp /usr/include/c++/13/sstream \
  /usr/include/c++/13/bits/sstream.tcc
