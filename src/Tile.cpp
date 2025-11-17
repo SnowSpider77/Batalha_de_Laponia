@@ -29,7 +29,9 @@ std::string typeToString(Tile::Type type) {
 
 std::ostream& operator<<(std::ostream& os, Tile const& tile) {
     std::string out = typeToString(tile.getType());
-    if (tile.getType() == Tile::Type::Floor) out.replace(1, 1, 1, tile.occupant->getSymbol());
+
+    if (tile.getType() == Tile::Type::Floor and tile.occupant != nullptr) 
+        out.replace(1, 1, 1, tile.occupant->getSymbol());
 
     os << out;
     return os;
