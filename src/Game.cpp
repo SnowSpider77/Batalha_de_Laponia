@@ -4,7 +4,7 @@
 
 Game::Game(int width, int height, int troopsPerPlayer)
 : board(width, height),
-  currentPlayer(1),
+  currentPlayer(Troop::Player::North),
   specialUsesNorth(4),
   specialUsesSouth(4),
   troopsPerPlayer(troopsPerPlayer)
@@ -20,15 +20,7 @@ bool Game::inBoard(int x, int y) const {
     return board.inBounds({x, y});
 }
 
-int Game::countTroops(int player) const {
-    return (player == 1 ? (int)northTroops.size() : (int)southTroops.size());
-}
-
 void Game::cleanup() {
-    for (Troop * t : northTroops) delete t;
-    for (Troop * t : southTroops) delete t;
-    northTroops.clear();
-    southTroops.clear();
     specialUsesNorth = 4;
     specialUsesSouth = 4;
     board.clear();
@@ -36,12 +28,13 @@ void Game::cleanup() {
 
 void Game::placementPhase() {
     std::cout << "Fase de posicionamento: cada jogador posiciona " << troopsPerPlayer << " tropas."  << std::endl;
-    for (int player = 1; player <= 2; ++player) {
-        std::cout << (player==1 ? "Posicionamento do Norte (#)" : "Posicionamento do Sul (@)") << std::endl;
+    for (Troop::Player player : {Troop::Player::North, Troop::Player::South}) {
+        std::cout << (player==Troop::Player::North ? "Posicionamento do Norte (#)" : "Posicionamento do Sul (@)") << std::endl;
         int placed = 0;
         while (placed < troopsPerPlayer) {
             board.displayBoard();
-            std::cout << "Jogador " << player << " posicione a tropa " << placed+1 << " (formato: tipo x y)" << std::endl;
+            std::cout << "Jogador do " << Troop::typeToString(player)
+            << " posicione a tropa " << placed+1 << " (formato: tipo x y)" << std::endl;
             std::cout << "Tipo 1 = Fuzileiro\nTipo 2 = Flanco\nTipo 3 = Especial" << std::endl;
             int type, x, y;
             if (!(std::cin >> type >> x >> y)) {
@@ -60,11 +53,11 @@ void Game::placementPhase() {
             }
             Troop * t;
             Troop::TroopType ttype;
-            if (type == 1) t = new AxialTroop((player==1?Troop::Player::North:Troop::Player::South), x, y);
-            else if (type == 2) t = new DiagonalTroop((player==1?Troop::Player::North:Troop::Player::South), x, y);
+            if (type == 1) t = new AxialTroop(player, x, y);
+            else if (type == 2) t = new DiagonalTroop(player, x, y);
             else if (type == 3) {
-                if (player==1) t = new SpecialWallTroop((player==1?Troop::Player::North:Troop::Player::South), x, y);
-                else t = new SpecialBombTroop((player==1?Troop::Player::North:Troop::Player::South), x, y);   
+                if (player == Troop::Player::North) t = new SpecialWallTroop(player, x, y);
+                else t = new SpecialBombTroop(player, x, y);   
             }
             else {
                 std::cout << "Tipo invalido" << std::endl;
@@ -72,8 +65,6 @@ void Game::placementPhase() {
             }
 
             board.getTile({x,y}).setOccupant(t);
-            if (player==1) northTroops.push_back(t);
-            else southTroops.push_back(t);
             placed++;
         }
     }
@@ -81,20 +72,18 @@ void Game::placementPhase() {
 
 void Game::battleLoop() {
     std::cout << "A batalha se inicia!\n";
-    while (countTroops(1) > 0 && countTroops(2) > 0) {
+    while (board.countTroopsOwner(Troop::Player::North) > 0 && board.countTroopsOwner(Troop::Player::South) > 0) {
         board.displayBoard();
-        std::cout << "Vez do jogador do " << (currentPlayer == 1 ? "Norte" : "Sul") << std::endl;
+        std::cout << "Vez do jogador do " << Troop::typeToString(currentPlayer) << std::endl;
         std::cout << "Selecione o guerreiro (x y): ";
     
         int sx, sy;
         if (!(std::cin >> sx >> sy)) { std::cin.clear(); std::cin.ignore(10000,'\n'); continue; }
         if (!inBoard(sx, sy)) { std::cout << "Fora dos limites do tabuleiro\n"; continue; }
-        Troop * t = board.getTile({sx, sy}).getOccupant();
+        Troop * t = board.getTroop({sx, sy});
         if (!t) { std::cout << "Nao existe guerreiro nessa posicao\n"; continue; }
-        if ((currentPlayer == 1 && t->getOwner() != Troop::Player::North) ||
-            (currentPlayer == 2 && t->getOwner() != Troop::Player::South)) {
-            std::cout << "Esse guerreiro pertence ao oponente\n"; continue;
-        }
+        if (currentPlayer != t->getOwner()) { std::cout << "Esse guerreiro pertence ao oponente\n"; continue; }
+
 
         std::cout << "Escolha a acao: (1: mover, 2: atacar) ";
         int action;
@@ -104,10 +93,10 @@ void Game::battleLoop() {
         else if (action == 2) doAttack(t);
         else { std::cout << "Acao invalida\n"; continue; }
 
-        currentPlayer = (currentPlayer == 1 ? 2 : 1);
+        currentPlayer = (currentPlayer == Troop::Player::North ? Troop::Player::South : Troop::Player::North);
     }
 
-    if (countTroops(1) == 0) std::cout << "South (@) wins!" << std::endl;
+    if (board.countTroopsOwner(Troop::Player::North) == 0) std::cout << "South (@) wins!" << std::endl;
     else std::cout << "North (#) wins!" << std::endl;
 
     askRestart();

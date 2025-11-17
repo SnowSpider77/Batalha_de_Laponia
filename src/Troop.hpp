@@ -38,6 +38,7 @@ public:
     }
 
     TroopType getType() const;
+    static std::string typeToString(Player player);
     void setType(TroopType t);
 
     char getSymbol() const;

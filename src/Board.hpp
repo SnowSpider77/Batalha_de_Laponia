@@ -25,6 +25,7 @@ public:
     void placeTroop(Position p, Troop * t);
     void removeTroop(Position p);
     void moveTroop(Position from, Position to);
+    int countTroopsOwner(Troop::Player owner);
 
     void clear();
 };

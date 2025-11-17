@@ -12,10 +12,8 @@ public:
 
 private:
     Board board;
-    std::vector<Troop*> northTroops;
-    std::vector<Troop*> southTroops;
 
-    int currentPlayer;
+    Troop::Player currentPlayer;
     int specialUsesNorth;
     int specialUsesSouth;
     int troopsPerPlayer;
@@ -31,6 +29,5 @@ private:
     // helpers
     bool inBoard(int x, int y) const;
     void cleanup();
-    int countTroops(int player) const;
     void askRestart();
 };

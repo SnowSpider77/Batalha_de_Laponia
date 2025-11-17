@@ -424,6 +424,7 @@ CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.o: /home/ezau/Batalha_de_Laponia/
 
 CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o: /home/ezau/Batalha_de_Laponia/src/Main.cpp \
   /home/ezau/Batalha_de_Laponia/src/Board.hpp \
+  /home/ezau/Batalha_de_Laponia/src/Game.hpp \
   /home/ezau/Batalha_de_Laponia/src/Tile.hpp \
   /home/ezau/Batalha_de_Laponia/src/Troop.hpp \
   /usr/include/alloca.h \

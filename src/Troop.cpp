@@ -21,6 +21,10 @@ Troop::TroopType Troop::getType() const {
     return type;
 }
 
+std::string Troop::typeToString(Player player) {
+    return (player == Player::North ? "Norte" : "Sul");
+}
+
 void Troop::setType(TroopType t) {
     type = t;
 }
@@ -54,7 +58,7 @@ SpecialBombTroop::SpecialBombTroop(Player owner, int x, int y) : Troop(owner, x,
 
 void AxialTroop::attack(Board& board, Position p) {
     if (p.x == -1 && p.y == -1) p = getPos();
-    p.x += (getOwner() == Player::North ? -1 : 1 );
+    p.y += (getOwner() == Player::North ? -1 : 1 );
     if (!board.inBounds(p)) return;
     Troop * t = board.getTroop(p);
     if (t != nullptr){
@@ -67,8 +71,8 @@ void AxialTroop::attack(Board& board, Position p) {
 void DiagonalTroop::attack(Board& board, Position p, int d) {
     // d is direction, 1 for left 2 for right
     if (p.x == -1 && p.y == -1) p = getPos();
-    p.x += (getOwner() == Player::North ? -1 : 1 );
-    p.y += (d == 1 ? -1 : 1);
+    p.y += (getOwner() == Player::North ? -1 : 1 );
+    p.x += (d == 1 ? -1 : 1);
     if (!board.inBounds(p)) return;
     Troop * t = board.getTroop(p);
     if (t != nullptr){
@@ -80,8 +84,8 @@ void DiagonalTroop::attack(Board& board, Position p, int d) {
 void SpecialWallTroop::attack(Board& board, Position p, int d) {
     // d in direction, -1 for left, 0 for straight, 1 for right
     if (p.x == -1 && p.y == -1) p = getPos();
-    p.x += (getOwner() == Player::North ? -1 : 1 );
-    p.y += d;
+    p.y += (getOwner() == Player::North ? -1 : 1 );
+    p.x += d;
     if (!board.inBounds(p)) return;
     Troop * t = board.getTroop(p);
     if (t != nullptr) board.removeTroop(p);
@@ -94,7 +98,7 @@ void SpecialBombTroop::attack(Board& board, Position p){
             Position pow = {p.x + dx, p.y + dy};
             if (!board.inBounds(pow)) continue;
             if(board.getTile(pow).getOccupant())
-                board.removeTroop(p);
+                board.removeTroop(pow);
         }
     }
 }

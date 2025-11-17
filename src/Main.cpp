@@ -4,7 +4,7 @@
 class MainClass {
 public:
     void run() {
-        Game game = Game();
+        Game game = Game(5, 5, 2);
         game.start();
     }
 };
