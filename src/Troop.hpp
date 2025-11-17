@@ -1,7 +1,9 @@
 #ifndef TROOP_H
 #define TROOP_H
 
-#include "Board.hpp"
+#include<vector>
+
+class Board;
 
 struct Position{
     int x;
@@ -29,9 +31,11 @@ public:
 
     Player getOwner() const;
 
-    virtual void attack();
-    virtual std::vector<Position> getLegalMoves(Board const& board) const;
-    virtual std::vector<Position> getLegalTargets(Board const& board) const;
+    virtual void attack() = 0;
+    virtual std::vector<Position> getLegalMoves(Board const& board) const = 0;
+    virtual std::vector<Position> getLegalTargets(Board const& board) const = 0;
+
+    char getSymbol() const;
 };
 
 #endif

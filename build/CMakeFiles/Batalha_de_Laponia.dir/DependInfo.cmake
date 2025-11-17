@@ -9,10 +9,10 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/ezau/Batalha_de_Laponia/src/Board.cpp" "CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.o" "gcc" "CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.o.d"
+  "/home/ezau/Batalha_de_Laponia/src/Game.cpp" "CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.o" "gcc" "CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.o.d"
   "/home/ezau/Batalha_de_Laponia/src/Main.cpp" "CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o" "gcc" "CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o.d"
   "/home/ezau/Batalha_de_Laponia/src/Tile.cpp" "CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o" "gcc" "CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o.d"
   "/home/ezau/Batalha_de_Laponia/src/Troop.cpp" "CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o" "gcc" "CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o.d"
-  "/home/ezau/Batalha_de_Laponia/src/warrior.cpp" "CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.o" "gcc" "CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.o.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

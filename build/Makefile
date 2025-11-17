@@ -153,6 +153,30 @@ src/Board.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Batalha_de_Laponia.dir/build.make CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.s
 .PHONY : src/Board.cpp.s
 
+src/Game.o: src/Game.cpp.o
+.PHONY : src/Game.o
+
+# target to build an object file
+src/Game.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Batalha_de_Laponia.dir/build.make CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.o
+.PHONY : src/Game.cpp.o
+
+src/Game.i: src/Game.cpp.i
+.PHONY : src/Game.i
+
+# target to preprocess a source file
+src/Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Batalha_de_Laponia.dir/build.make CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.i
+.PHONY : src/Game.cpp.i
+
+src/Game.s: src/Game.cpp.s
+.PHONY : src/Game.s
+
+# target to generate assembly for a file
+src/Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Batalha_de_Laponia.dir/build.make CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.s
+.PHONY : src/Game.cpp.s
+
 src/Main.o: src/Main.cpp.o
 .PHONY : src/Main.o
 
@@ -225,30 +249,6 @@ src/Troop.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Batalha_de_Laponia.dir/build.make CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.s
 .PHONY : src/Troop.cpp.s
 
-src/warrior.o: src/warrior.cpp.o
-.PHONY : src/warrior.o
-
-# target to build an object file
-src/warrior.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Batalha_de_Laponia.dir/build.make CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.o
-.PHONY : src/warrior.cpp.o
-
-src/warrior.i: src/warrior.cpp.i
-.PHONY : src/warrior.i
-
-# target to preprocess a source file
-src/warrior.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Batalha_de_Laponia.dir/build.make CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.i
-.PHONY : src/warrior.cpp.i
-
-src/warrior.s: src/warrior.cpp.s
-.PHONY : src/warrior.s
-
-# target to generate assembly for a file
-src/warrior.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Batalha_de_Laponia.dir/build.make CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.s
-.PHONY : src/warrior.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -261,6 +261,9 @@ help:
 	@echo "... src/Board.o"
 	@echo "... src/Board.i"
 	@echo "... src/Board.s"
+	@echo "... src/Game.o"
+	@echo "... src/Game.i"
+	@echo "... src/Game.s"
 	@echo "... src/Main.o"
 	@echo "... src/Main.i"
 	@echo "... src/Main.s"
@@ -270,9 +273,6 @@ help:
 	@echo "... src/Troop.o"
 	@echo "... src/Troop.i"
 	@echo "... src/Troop.s"
-	@echo "... src/warrior.o"
-	@echo "... src/warrior.i"
-	@echo "... src/warrior.s"
 .PHONY : help
 
 

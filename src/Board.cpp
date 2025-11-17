@@ -2,14 +2,14 @@
 #include <iostream>
 
 Board::Board() {
-    board.resize(SIZE, std::vector<Tile>());
-    for (int y = 0; y < SIZE; y++) {
-        board[y].reserve(SIZE);
+    board.resize(height, std::vector<Tile>());
+    for (int y = 0; y < height; y++) {
+        board[y].reserve(width);
 
-        for (int x = 0; x < SIZE; x++) {
+        for (int x = 0; x < width; x++) {
             Tile::Type t;
 
-            if (x == 0 || x == SIZE-1 || y == 0 || y == SIZE-1)
+            if (x == 0 || x == width-1 || y == 0 || y == height-1)
                 t = Tile::Type::Wall;
             else if (y == 5 || y == 6)
                 t = Tile::Type::River;
@@ -32,8 +32,4 @@ void Board::displayBoard() const {
 
 Tile& Board::getTile(int x, int y) {
     return board[x][y];
-}
-
-void Board::setTileState(int x, int y, char state) {
-    board[x][y].setState(state);
 }

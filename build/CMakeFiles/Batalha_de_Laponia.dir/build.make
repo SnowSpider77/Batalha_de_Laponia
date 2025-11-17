@@ -73,88 +73,88 @@ CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.o: CMakeFiles/Batalha_de_Laponia
 CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.o: /home/ezau/Batalha_de_Laponia/src/Board.cpp
 CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.o: CMakeFiles/Batalha_de_Laponia.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ezau/Batalha_de_Laponia/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.o -MF CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.o.d -o CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.o -c /home/ezau/Batalha_de_Laponia/src/Board.cpp
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.o -MF CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.o.d -o CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.o -c /home/ezau/Batalha_de_Laponia/src/Board.cpp
 
 CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ezau/Batalha_de_Laponia/src/Board.cpp > CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ezau/Batalha_de_Laponia/src/Board.cpp > CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.i
 
 CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ezau/Batalha_de_Laponia/src/Board.cpp -o CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ezau/Batalha_de_Laponia/src/Board.cpp -o CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.s
+
+CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.o: CMakeFiles/Batalha_de_Laponia.dir/flags.make
+CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.o: /home/ezau/Batalha_de_Laponia/src/Game.cpp
+CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.o: CMakeFiles/Batalha_de_Laponia.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ezau/Batalha_de_Laponia/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.o -MF CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.o.d -o CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.o -c /home/ezau/Batalha_de_Laponia/src/Game.cpp
+
+CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ezau/Batalha_de_Laponia/src/Game.cpp > CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.i
+
+CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ezau/Batalha_de_Laponia/src/Game.cpp -o CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.s
 
 CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o: CMakeFiles/Batalha_de_Laponia.dir/flags.make
 CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o: /home/ezau/Batalha_de_Laponia/src/Main.cpp
 CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o: CMakeFiles/Batalha_de_Laponia.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ezau/Batalha_de_Laponia/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o -MF CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o.d -o CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o -c /home/ezau/Batalha_de_Laponia/src/Main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ezau/Batalha_de_Laponia/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o -MF CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o.d -o CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o -c /home/ezau/Batalha_de_Laponia/src/Main.cpp
 
 CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ezau/Batalha_de_Laponia/src/Main.cpp > CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ezau/Batalha_de_Laponia/src/Main.cpp > CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.i
 
 CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ezau/Batalha_de_Laponia/src/Main.cpp -o CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ezau/Batalha_de_Laponia/src/Main.cpp -o CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.s
 
 CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o: CMakeFiles/Batalha_de_Laponia.dir/flags.make
 CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o: /home/ezau/Batalha_de_Laponia/src/Tile.cpp
 CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o: CMakeFiles/Batalha_de_Laponia.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ezau/Batalha_de_Laponia/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o -MF CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o.d -o CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o -c /home/ezau/Batalha_de_Laponia/src/Tile.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ezau/Batalha_de_Laponia/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o -MF CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o.d -o CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o -c /home/ezau/Batalha_de_Laponia/src/Tile.cpp
 
 CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ezau/Batalha_de_Laponia/src/Tile.cpp > CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ezau/Batalha_de_Laponia/src/Tile.cpp > CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.i
 
 CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ezau/Batalha_de_Laponia/src/Tile.cpp -o CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ezau/Batalha_de_Laponia/src/Tile.cpp -o CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.s
 
 CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o: CMakeFiles/Batalha_de_Laponia.dir/flags.make
 CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o: /home/ezau/Batalha_de_Laponia/src/Troop.cpp
 CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o: CMakeFiles/Batalha_de_Laponia.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ezau/Batalha_de_Laponia/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o -MF CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o.d -o CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o -c /home/ezau/Batalha_de_Laponia/src/Troop.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ezau/Batalha_de_Laponia/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o -MF CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o.d -o CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o -c /home/ezau/Batalha_de_Laponia/src/Troop.cpp
 
 CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ezau/Batalha_de_Laponia/src/Troop.cpp > CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ezau/Batalha_de_Laponia/src/Troop.cpp > CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.i
 
 CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ezau/Batalha_de_Laponia/src/Troop.cpp -o CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.s
-
-CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.o: CMakeFiles/Batalha_de_Laponia.dir/flags.make
-CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.o: /home/ezau/Batalha_de_Laponia/src/warrior.cpp
-CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.o: CMakeFiles/Batalha_de_Laponia.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/ezau/Batalha_de_Laponia/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.o"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.o -MF CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.o.d -o CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.o -c /home/ezau/Batalha_de_Laponia/src/warrior.cpp
-
-CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ezau/Batalha_de_Laponia/src/warrior.cpp > CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.i
-
-CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ezau/Batalha_de_Laponia/src/warrior.cpp -o CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ezau/Batalha_de_Laponia/src/Troop.cpp -o CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.s
 
 # Object files for target Batalha_de_Laponia
 Batalha_de_Laponia_OBJECTS = \
 "CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.o" \
+"CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.o" \
 "CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o" \
 "CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o" \
-"CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o" \
-"CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.o"
+"CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o"
 
 # External object files for target Batalha_de_Laponia
 Batalha_de_Laponia_EXTERNAL_OBJECTS =
 
 bin/Batalha_de_Laponia: CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.o
+bin/Batalha_de_Laponia: CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.o
 bin/Batalha_de_Laponia: CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o
 bin/Batalha_de_Laponia: CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o
 bin/Batalha_de_Laponia: CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o
-bin/Batalha_de_Laponia: CMakeFiles/Batalha_de_Laponia.dir/src/warrior.cpp.o
 bin/Batalha_de_Laponia: CMakeFiles/Batalha_de_Laponia.dir/build.make
 bin/Batalha_de_Laponia: CMakeFiles/Batalha_de_Laponia.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/ezau/Batalha_de_Laponia/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable bin/Batalha_de_Laponia"
