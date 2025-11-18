@@ -41,6 +41,14 @@ Tile const& Board::getTile(Position p) const {
     return board[p.x][p.y];
 }
 
+int Board::getHeight() const {
+    return height;
+}
+
+int Board::getWidth() const {
+    return width;
+}
+
 bool Board::inBounds(Position p) const {
     return p.x >= 0 && p.x < width &&
            p.y >= 0 && p.y < height;

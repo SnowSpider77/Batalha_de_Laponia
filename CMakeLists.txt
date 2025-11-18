@@ -15,6 +15,8 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
+find_package(SFML 2.5 COMPONENTS system window graphics REQUIRED)
+
 # Collect source files
 file(GLOB_RECURSE SOURCES
     src/*.cpp
@@ -24,3 +26,9 @@ file(GLOB_RECURSE SOURCES
 )
 
 add_executable(${PROJECT_NAME} ${SOURCES})
+
+target_link_libraries(${PROJECT_NAME}
+    sfml-system
+    sfml-window
+    sfml-graphics
+)

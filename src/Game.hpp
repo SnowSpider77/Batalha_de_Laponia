@@ -10,6 +10,8 @@ public:
 
     void start();
 
+    Board& getBoard();
+
 private:
     Board board;
 

@@ -17,6 +17,9 @@ public:
     Tile& getTile(Position p);
     Tile const& getTile(Position p) const;
 
+    int getHeight() const;
+    int getWidth() const;
+
     bool inBounds(Position P) const;
     bool isEmpty(Position p) const;
     bool isWalkable(Position p) const;

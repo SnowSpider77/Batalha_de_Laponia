@@ -1,0 +1,55 @@
+Tropas
+
+Cada tropa ocupa uma única casa e se move uma casa por turno, apenas para cima, baixo, esquerda ou direita, desde que o destino seja chão e esteja vazio.
+
+Há quatro tipos de tropa:
+
+1. Fuzileiro (1)
+
+Ataca apenas para frente.
+O ataque anda em linha reta até acertar uma tropa inimiga (que é destruída) ou bater em um obstáculo.
+
+2. Flanco (2)
+
+Escolhe atacar na diagonal da frente esquerda ou direita.
+O ataque segue na diagonal até atingir uma tropa ou parar em um obstáculo.
+
+3. Sniper (#)
+
+Pode atacar para frente ou nas duas diagonais da frente.
+O ataque avança automaticamente até destruir uma tropa inimiga ou ser bloqueado.
+
+4. Morteiro (@)
+
+Realiza uma explosão em área.
+O jogador escolhe uma casa, e todas as casas ao redor (um quadrado 3×3) são atingidas.
+Todas as tropas dentro da área são destruídas.
+
+Como Jogar
+Fase de Colocação
+
+Primeiro o jogador do Norte posiciona todas as suas tropas.
+Depois o jogador do Sul faz o mesmo.
+As tropas só podem ser colocadas em casas de chão vazias.
+
+Fase de Batalha
+
+Os turnos alternam: Norte → Sul → Norte → ...
+
+Em cada turno:
+
+O jogador escolhe a tropa informando suas coordenadas.
+
+Escolhe entre:
+
+1: Mover
+
+2: Atacar
+
+A ação é executada imediatamente.
+
+Fim do Jogo
+
+Quando um jogador não tem mais tropas no tabuleiro, o outro vence.
+
+Após o fim, o jogo pergunta se os jogadores desejam jogar novamente.

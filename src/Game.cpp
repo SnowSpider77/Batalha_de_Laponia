@@ -10,6 +10,10 @@ Game::Game(int width, int height, int troopsPerPlayer)
   troopsPerPlayer(troopsPerPlayer)
 {}
 
+Board& Game::getBoard() {
+    return board;
+}
+
 void Game::start() {
     cleanup();
     placementPhase();
@@ -43,13 +47,21 @@ void Game::placementPhase() {
                 std::cout << "Input invalido" << std::endl;
                 continue;
             }
-            if (!inBoard(x,y)) {
-                std::cout << "Posicao fora dos limites do tabuleiro" << std::endl;
+            if (!board.isWalkable({x,y})) {
+                std::cout << "A tropa nao pode ser posicionada aqui" << std::endl;
                 continue;
             }
-            if (board.getTile({x,y}).getOccupant() != nullptr) {
-                std::cout << "Casa ocupada" << std::endl;
-                continue;
+            if(player == Troop::Player::North) {
+                if (y < board.getHeight() / 2) {
+                    std::cout << "A tropa do Norte deve ser posicionada no lado superior" << std::endl;
+                    continue;
+                }
+            }
+            else {
+                if (y > board.getHeight() / 2) {
+                    std::cout << "A tropa do Sul deve ser posicionada no lado inferior" << std::endl;
+                    continue;
+                }
             }
             Troop * t;
             Troop::TroopType ttype;
@@ -96,8 +108,8 @@ void Game::battleLoop() {
         currentPlayer = (currentPlayer == Troop::Player::North ? Troop::Player::South : Troop::Player::North);
     }
 
-    if (board.countTroopsOwner(Troop::Player::North) == 0) std::cout << "South (@) wins!" << std::endl;
-    else std::cout << "North (#) wins!" << std::endl;
+    if (board.countTroopsOwner(Troop::Player::North) == 0) std::cout << "Sul vence!" << std::endl;
+    else std::cout << "Norte vence!" << std::endl;
 
     askRestart();
 }
@@ -153,13 +165,13 @@ void Game::doAttack(Troop * t) {
     }}
 
 void Game::askRestart() {
-    std::cout << "Play again? (y/n): ";
+    std::cout << "Jogar novamente? (s/n): ";
     char c; std::cin >> c;
-    if (c == 'y' || c == 'Y') {
+    if (c == 's' || c == 'S') {
         cleanup();
         start();
     } else {
-        std::cout << "Exiting.\n";
+        std::cout << "Saindo.\n";
         cleanup();
     }
 }
