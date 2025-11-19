@@ -156,19 +156,24 @@ void Game::doAttack(Troop * t) {
         t->attack(board, {-1, -1}, d);
     }
     else if (t->getType() == Troop::TroopType::SpecialWall){
-        std::cout << "Atacar para:\nDiagonal esquerda (1)\n" <<
-        (t->getOwner() == Troop::Player::North ? "Baixo" : "Cima")
-        << "(2)\nDiagonal direita (3)?" << std::endl;
-        int d;
-        std::cin >> d;
-        t->attack(board, {-1, -1}, d-2);
+        if (0 < (currentPlayer == Troop::Player::North ? specialUsesNorth : specialUsesSouth)){
+            std::cout << "Atacar para:\nDiagonal esquerda (1)\n" <<
+            (t->getOwner() == Troop::Player::North ? "Baixo" : "Cima")
+            << "(2)\nDiagonal direita (3)?" << std::endl;
+            int d;
+            std::cin >> d;
+            t->attack(board, {-1, -1}, d-2);
+        }
     }
     else if (t->getType() == Troop::TroopType::SpecialBomb){
-        std::cout << "Escolha a posicao do ataque (x y) ";
-        Position p;
-        std::cin >> p.x >> p.y;
-        t->attack(board, p);
-    }}
+        if (0 < (currentPlayer == Troop::Player::North ? specialUsesNorth : specialUsesSouth)){
+            std::cout << "Escolha a posicao do ataque (x y) ";
+            Position p;
+            std::cin >> p.x >> p.y;
+            t->attack(board, p);
+        }
+    }
+}
 
 void Game::askRestart() {
     std::cout << "Jogar novamente? (s/n): ";

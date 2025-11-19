@@ -25,7 +25,7 @@ void Tile::setOccupant(Troop * t) {
 std::string typeToString(Tile::Type type) {
     switch (type) {
         case Tile::Type::Floor: return "[ ]";
-        case Tile::Type::Wall:  return "+++";
+        case Tile::Type::Wall:  return "   ";
         case Tile::Type::River: return "~~~";
     }
     return " ? ";
