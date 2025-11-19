@@ -2,12 +2,13 @@
 #include <iostream>
 #include <algorithm>
 
-Game::Game(int width, int height, int troopsPerPlayer)
+Game::Game(int width, int height, int troopsPerPlayer, int specialTroopsPerPlayer)
 : board(width, height),
   currentPlayer(Troop::Player::North),
   specialUsesNorth(4),
   specialUsesSouth(4),
-  troopsPerPlayer(troopsPerPlayer)
+  troopsPerPlayer(troopsPerPlayer),
+  specialTroopsPerPlayer(specialTroopsPerPlayer)
 {}
 
 Board& Game::getBoard() {
@@ -31,15 +32,19 @@ void Game::cleanup() {
 }
 
 void Game::placementPhase() {
-    std::cout << "Fase de posicionamento: cada jogador posiciona " << troopsPerPlayer << " tropas."  << std::endl;
+    std::cout << "Fase de posicionamento: cada jogador posiciona:\n- "
+    << troopsPerPlayer << " tropas comuns;\n- "
+    << specialTroopsPerPlayer << " tropas especiais." << std::endl;
     for (Troop::Player player : {Troop::Player::North, Troop::Player::South}) {
         std::cout << (player==Troop::Player::North ? "Posicionamento do Norte (#)" : "Posicionamento do Sul (@)") << std::endl;
         int placed = 0;
-        while (placed < troopsPerPlayer) {
+        int specialPlaced = 0;
+        while (placed < troopsPerPlayer + specialTroopsPerPlayer) {
             board.displayBoard();
             std::cout << "Jogador do " << Troop::typeToString(player)
             << " posicione a tropa " << placed+1 << " (formato: tipo x y)" << std::endl;
-            std::cout << "Tipo 1 = Fuzileiro\nTipo 2 = Flanco\nTipo 3 = Especial" << std::endl;
+            std::cout << "Tipo 1 = Fuzileiro\nTipo 2 = Flanco"
+            << (specialPlaced < specialTroopsPerPlayer ? "\nTipo 3 = Especial" : "") << std::endl;
             int type, x, y;
             if (!(std::cin >> type >> x >> y)) {
                 std::cin.clear();
@@ -67,7 +72,7 @@ void Game::placementPhase() {
             Troop::TroopType ttype;
             if (type == 1) t = new AxialTroop(player, x, y);
             else if (type == 2) t = new DiagonalTroop(player, x, y);
-            else if (type == 3) {
+            else if (type == 3 && specialPlaced <= specialTroopsPerPlayer) {
                 if (player == Troop::Player::North) t = new SpecialWallTroop(player, x, y);
                 else t = new SpecialBombTroop(player, x, y);   
             }
@@ -77,6 +82,7 @@ void Game::placementPhase() {
             }
 
             board.getTile({x,y}).setOccupant(t);
+            if (type == 3) specialPlaced++;
             placed++;
         }
     }

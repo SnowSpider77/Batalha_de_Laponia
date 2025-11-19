@@ -6,7 +6,7 @@
 
 class Game {
 public:
-    Game(int width = 12, int height = 12, int troopsPerPlayer = 8);
+    Game(int width = 10, int height = 10, int troopsPerPlayer = 8, int specialTroopsPerPlayer = 1);
 
     void start();
 
@@ -19,6 +19,7 @@ private:
     int specialUsesNorth;
     int specialUsesSouth;
     int troopsPerPlayer;
+    int specialTroopsPerPlayer;
 
     // phases
     void placementPhase();
