@@ -47,6 +47,10 @@ void Game::placementPhase() {
             << (specialPlaced < specialTroopsPerPlayer ? "\nTipo 3 = Especial" : "") << std::endl;
             int type, x, y;
             if (!(std::cin >> type >> x >> y)) {
+                if (std::cin.eof()) {
+                    std::cout << "\nEncerrando (EOF recebido).\n";
+                    exit(0);
+                }
                 std::cin.clear();
                 std::cin.ignore(10000, '\n');
                 std::cout << "Input invalido" << std::endl;
@@ -96,7 +100,15 @@ void Game::battleLoop() {
         std::cout << "Selecione o guerreiro (x y): ";
     
         int sx, sy;
-        if (!(std::cin >> sx >> sy)) { std::cin.clear(); std::cin.ignore(10000,'\n'); continue; }
+        if (!(std::cin >> sx >> sy)) { 
+            if (std::cin.eof()) {
+                std::cout << "\nEncerrando (EOF recebido).\n";
+                exit(0);
+            }
+            std::cin.clear();
+            std::cin.ignore(10000,'\n'); 
+            continue; 
+        }
         if (!inBoard(sx, sy)) { std::cout << "Fora dos limites do tabuleiro\n"; continue; }
         Troop * t = board.getTroop({sx, sy});
         if (!t) { std::cout << "Nao existe guerreiro nessa posicao\n"; continue; }
@@ -105,7 +117,15 @@ void Game::battleLoop() {
 
         std::cout << "Escolha a acao: (1: mover, 2: atacar) ";
         int action;
-        if (!(std::cin >> action)) { std::cin.clear(); std::cin.ignore(10000,'\n'); continue; }
+        if (!(std::cin >> action)) {
+            if (std::cin.eof()) {
+                std::cout << "\nEncerrando (EOF recebido).\n";
+                exit(0);
+            }
+            std::cin.clear();
+            std::cin.ignore(10000,'\n');
+            continue;
+        }
 
         if (action == 1) doMove(t);
         else if (action == 2) doAttack(t);
@@ -136,7 +156,16 @@ void Game::doMove(Troop * t) {
     std::cout << "Movimentos possiveis:" << std::endl;
     for (Position &m : moves) std::cout << "("<<m.x<<", "<<m.y<<") " << std::endl;
     std::cout << "Escolha o (x y) desejado: ";
-    int tx, ty; if (!(std::cin >> tx >> ty)) { std::cin.clear(); std::cin.ignore(10000,'\n'); return; }
+    int tx, ty;
+    if (!(std::cin >> tx >> ty)) {
+        if (std::cin.eof()) {
+            std::cout << "\nEncerrando (EOF recebido).\n";
+            exit(0);
+        }
+        std::cin.clear();
+        std::cin.ignore(10000,'\n');
+        return;
+    }
 
     auto it = std::find_if(moves.begin(), moves.end(), [&](const Position& q){ return q.x==tx && q.y==ty; });
     if (it == moves.end()) { std::cout << "Movimento invalido\n"; return; }

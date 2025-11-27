@@ -1,1 +1,0 @@
-/usr/bin/c++ -g CMakeFiles/Batalha_de_Laponia.dir/src/Board.cpp.o CMakeFiles/Batalha_de_Laponia.dir/src/Game.cpp.o CMakeFiles/Batalha_de_Laponia.dir/src/Main.cpp.o CMakeFiles/Batalha_de_Laponia.dir/src/Tile.cpp.o CMakeFiles/Batalha_de_Laponia.dir/src/Troop.cpp.o -o bin/Batalha_de_Laponia  -lsfml-system -lsfml-window -lsfml-graphics 
