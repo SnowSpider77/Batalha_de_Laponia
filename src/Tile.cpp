@@ -22,6 +22,7 @@ void Tile::setOccupant(Troop * t) {
     occupant = t;
 }
 
+// Função auxiliar para a impressão do Tile conforme o tipo definido
 std::string typeToString(Tile::Type type) {
     switch (type) {
         case Tile::Type::Floor: return "[ ]";
@@ -31,6 +32,7 @@ std::string typeToString(Tile::Type type) {
     return " ? ";
 }
 
+// Sobrecarga do operador <<, usa typeToString e substitui o caracter do meio pelo símbolo da tropa, caso as condições sejam satisfeitas
 std::ostream& operator<<(std::ostream& os, Tile const& tile) {
     std::string out = typeToString(tile.getType());
 

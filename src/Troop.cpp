@@ -1,5 +1,5 @@
 #include "Troop.hpp"
-#include "Board.hpp" // ajuste se seu arquivo Board tiver outro nome
+#include "Board.hpp"
 
 Troop::Troop(Player owner, int x, int y)
     : owner(owner), pos{x,y} {}
@@ -21,6 +21,7 @@ Troop::TroopType Troop::getType() const {
     return type;
 }
 
+// Função auxiliar para imprimir o "nome" do jogador
 std::string Troop::typeToString(Player player) {
     return (player == Player::North ? "Norte" : "Sul");
 }
@@ -38,6 +39,7 @@ void Troop::setSymbol(char c) {
     symbol = c;
 }
 
+// Complementa o construtor de troop, especificando o tipo e o símbolo de cada tropa
 AxialTroop::AxialTroop(Player owner, int x, int y) : Troop(owner, x, y){
     setType(Troop::TroopType::Axial);
     setSymbol('1');
@@ -55,7 +57,9 @@ SpecialBombTroop::SpecialBombTroop(Player owner, int x, int y) : Troop(owner, x,
     setSymbol('@');
 }
 
-
+// Atque do fuzileiro, funciona de forma recursiva, iterando sobre as casas e viajando na direção y
+// Para quando encontrar uma tropa e destruí-la ou quando sair dos limites do tabuleiro
+// Nota: nenhuma função de ataque impede friendly fire  
 void AxialTroop::attack(Board& board, Position p) {
     if (p.x == -1 && p.y == -1) p = getPos();
     p.y += (getOwner() == Player::North ? -1 : 1 );
@@ -68,8 +72,10 @@ void AxialTroop::attack(Board& board, Position p) {
     attack(board, p);
 }
 
+// Ataque do flanco, funciona de forma recursiva, movendo-se em ambas direções
+// Para quando encontrar uma tropa e destruí-la ou quando sair dos limites do tabuleiro
 void DiagonalTroop::attack(Board& board, Position p, int d) {
-    // d is direction, 1 for left 2 for right
+    // d é a direção, 1 para esquerda e 2 para direita
     if (p.x == -1 && p.y == -1) p = getPos();
     p.y += (getOwner() == Player::North ? -1 : 1 );
     p.x += (d == 1 ? -1 : 1);
@@ -81,8 +87,10 @@ void DiagonalTroop::attack(Board& board, Position p, int d) {
     attack(board, p, d);
 }
 
+// Ataque do sniper, funciona de forma recursiva, movendo-se em ambas direções ou reto, a escolha do jogador
+// Para apenas quando sair dos limites do tabuleiro, destruindo todas as tropas no caminho
 void SpecialWallTroop::attack(Board& board, Position p, int d) {
-    // d in direction, -1 for left, 0 for straight, 1 for right
+    // d é a direção, -1 para esquerda, 0 para reto, 1 para direita
     if (p.x == -1 && p.y == -1) p = getPos();
     p.y += (getOwner() == Player::North ? -1 : 1 );
     p.x += d;
@@ -92,6 +100,8 @@ void SpecialWallTroop::attack(Board& board, Position p, int d) {
     attack(board, p, d);
 }
 
+// Ataque do morteiro
+// Funciona varrendo uma matriz 3x3 numa posição escolhida e eliminando todas as tropas na região
 void SpecialBombTroop::attack(Board& board, Position p){
     for (int dx = -1; dx <= 1; dx++){
         for (int dy = -1; dy <= 1; dy++){

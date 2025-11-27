@@ -15,21 +15,21 @@ public:
 private:
     Board board;
 
-    Troop::Player currentPlayer;
-    int specialUsesNorth;
+    Troop::Player currentPlayer; // Controla qual o jogador da vez
+    int specialUsesNorth; // Número de usos da habilidade especial restante
     int specialUsesSouth;
-    int troopsPerPlayer;
-    int specialTroopsPerPlayer;
+    int troopsPerPlayer; // Tropas normais por jogador
+    int specialTroopsPerPlayer; // Tropas especiais por jogador
 
-    // phases
+    // Fases principais
     void placementPhase();
     void battleLoop();
 
-    // actions
+    // Ações das tropas
     void doMove(Troop * t);
     void doAttack(Troop * t);
 
-    // helpers
+    // Funções auxiliares
     bool inBoard(int x, int y) const;
     void cleanup();
     void askRestart();

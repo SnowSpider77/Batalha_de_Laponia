@@ -1,6 +1,7 @@
 #include "Board.hpp"
 #include <iostream>
 
+// Cria o tabuleiro como uma matriz de Tiles
 Board::Board(int width, int height)
     : width(width + 2), height(height + 2)
 {
@@ -23,7 +24,7 @@ Board::Board(int width, int height)
     }
 }
 
-
+// Imprime o tabuleiro usando diretamente o operador <<, pois a sobrecarga é implementada em Tile
 void Board::displayBoard() const {
     for (int y = height - 1; y >= 0; y--) {
         for (int x = 0; x < width; x++) {
@@ -58,6 +59,7 @@ bool Board::isEmpty(Position p) const {
     return (getTile(p).getOccupant() == nullptr);
 }
 
+// Confere se o Tile é do tipo Floor e não está ocupado
 bool Board::isWalkable(Position p) const {
     if (!inBounds(p)) return false;
     return (getTile(p).getType() == Tile::Type::Floor && isEmpty(p));
@@ -94,6 +96,7 @@ void Board::moveTroop(Position from, Position to) {
     tileFrom.setOccupant(nullptr);
 }
 
+// Varre o tabuleiro contando as tropas por jogador
 int Board::countTroopsOwner(Troop::Player owner){
     int n = 0;
     for (int x = 1; x < width - 1; x++)
@@ -106,6 +109,7 @@ int Board::countTroopsOwner(Troop::Player owner){
     return n;
 }
 
+// Elimina todas as tropas do tabuleiro
 void Board::clear() {
     for (int x = 1; x < width - 1; x++)
         for (int y = 1; y < height - 1; y++)
